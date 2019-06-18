@@ -8,13 +8,17 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { Click1Component } from './click1/click1.component';
 import { Click2Component } from './click2/click2.component';
 import {ClickService} from "./services/click.service";
+import { TodoTaskComponent } from './todo-task/todo-task.component';
+import { TaskDoneComponent } from './task-done/task-done.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTaskComponent,
     Click1Component,
-    Click2Component
+    Click2Component,
+    TodoTaskComponent,
+    TaskDoneComponent
   ],
   imports: [
     BrowserModule,
