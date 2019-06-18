@@ -1,10 +1,6 @@
 <div>
   <div class="container">
-    <div>
-      <h1>Jakie zadania na dziś?</h1>
-      <input [(ngModel)]="newTask">
-      <button (click)="add()">Dodaj</button>
-    </div>
+    <app-add-task (emitTask)="add($event)" ></app-add-task>
   </div>
 
   <div class="container">
@@ -30,6 +26,20 @@
           {{doneTask}}
         </li>
       </ul>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h1>Aplikacja Klikacz</h1>
+  </div>
+  <div class="container">
+    <div>
+      <app-click1></app-click1>
+    </div>
+    Suma kliknięć: {{allClicks}}
+    <div>
+      <app-click2></app-click2>
     </div>
   </div>
 
