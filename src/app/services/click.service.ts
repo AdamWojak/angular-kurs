@@ -1,5 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Subject, Observable} from "rxjs";
+import {LogService} from "./log.service";
 
 @Injectable({
   providedIn: 'root'
@@ -7,18 +8,19 @@ import {Subject, Observable} from "rxjs";
 export class ClickService {
 
   private sumClicks = 0;
-  private sum = new Subject<>();
+  private sum = new Subject<number>();
 
-  constructor() {
+  constructor(private log: LogService) {
   }
 
   addClicks() {
     this.sumClicks += 1;
     this.sum.next(this.sumClicks);
     console.log('Suma w serwisie: ' + this.sumClicks);
+    this.log.logger("Kliknięcie!")
   }
 
-  getSum(): Observable<> {
+  getSum(): Observable<number> {
     return this.sum.asObservable();
   }
 

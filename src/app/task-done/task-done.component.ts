@@ -1,4 +1,5 @@
-import {Component, OnInit, Input} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {TaskService} from "../services/task.service";
 
 @Component({
   selector: 'app-task-done',
@@ -7,10 +8,12 @@ import {Component, OnInit, Input} from "@angular/core";
 })
 export class TaskDoneComponent implements OnInit {
 
-  @Input()
   taskDone: Array<string> = [];
 
-  constructor() {
+  constructor(private taskService: TaskService) {
+    this.taskService.getTaskDoneObs().subscribe(task => {
+      this.taskDone = task
+    });
   }
 
   ngOnInit() {

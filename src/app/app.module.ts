@@ -10,6 +10,7 @@ import { Click2Component } from './click2/click2.component';
 import {ClickService} from "./services/click.service";
 import { TodoTaskComponent } from './todo-task/todo-task.component';
 import { TaskDoneComponent } from './task-done/task-done.component';
+import {TaskService} from "./services/task.service";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { TaskDoneComponent } from './task-done/task-done.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [ClickService],
+  providers: [ClickService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

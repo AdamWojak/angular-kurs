@@ -6,3 +6,18 @@
 .box {
   display: flex;
 }
+
+li {
+  background: gray;
+  margin: 5px;
+}
+
+.odd-li {
+  background: green;
+  margin: 5px;
+}
+
+.last-li {
+  background: red;
+  margin: 5px;
+}
